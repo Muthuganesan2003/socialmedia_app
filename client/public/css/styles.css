@@ -1,0 +1,10 @@
+
+.bg-banner{
+    background-image:url("/images/tractor.jpg");
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 3px black;
+    background-size: cover;
+}
+body{
+    background-color: bisque;
+}
