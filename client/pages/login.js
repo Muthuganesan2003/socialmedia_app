@@ -3,7 +3,7 @@ const Login=()=>{
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1>Login Page</h1>
+                    <h1 className="col-md-6">Login Page</h1>
                 </div>
             </div>
         </div>
