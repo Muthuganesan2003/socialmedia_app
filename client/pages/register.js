@@ -43,7 +43,7 @@ const Register=()=>{
                     <h1>Register Page</h1>
                 </div>
             </div>
-            <div className="row py-5">
+            <div className="row py-3">
                 <div className="col-md-4 offset-md-4">
                     <AuthForm
                     handleSubmit={handleSubmit}
@@ -70,6 +70,14 @@ const Register=()=>{
                                 <p>You have registered succesfully</p>
                                 <Link href="/login" className="btn btn-primary btn-sm">Login</Link>
                             </Modal>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col">
+                            <p className="text-center">Already Registered? <Link href="/login">
+                            Login
+                            </Link> </p>
                         </div>
                     </div>
         </div>

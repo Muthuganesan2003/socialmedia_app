@@ -10,10 +10,11 @@ const AuthForm =({
     secret,
     setSecret,
     loading,
+    page,
 })=>{
     return(
 <form onSubmit={handleSubmit}>
-                        <div className="form-group py-3">
+                        {page !== "login" &&<div className="form-group py-3">
                             <label className="text-muted">Name:</label>
                             <input
                             value={name}
@@ -21,6 +22,15 @@ const AuthForm =({
                             type="text" 
                             className="form-control"
                             placeholder="Enter Name"/>
+                        </div>}
+                        <div className="form-group py-2">
+                            <label className="text-muted">Email:</label>
+                            <input
+                            value={email}
+                            onChange={(event)=>setEmail(event.target.value)} 
+                            type="email" 
+                            className="form-control" 
+                            placeholder="Enter Email"/>
                         </div>
 
                         <div className="form-group py-2">
@@ -33,16 +43,8 @@ const AuthForm =({
                             placeholder="Enter Password"/>
                         </div>
 
-                        <div className="form-group py-2">
-                            <label className="text-muted">Email:</label>
-                            <input
-                            value={email}
-                            onChange={(event)=>setEmail(event.target.value)} 
-                            type="email" 
-                            className="form-control" 
-                            placeholder="Enter Email"/>
-                        </div>
-                        <div className="form-group py-2">
+                        <>
+                        {page !== 'login'&& <div className="form-group py-2">
                             <label className="form-text text-muted">Security Questions</label>
                             <div className="py-1">
                             <select>
@@ -60,9 +62,15 @@ const AuthForm =({
                             placeholder="Enter your answer"/>
                             </div>
                             
-                        </div>
+                        </div>}
+
+                        </>
+                        
                         <div className="py-1">
-                        <button type="submit" className="btn btn-primary col-12">
+                        <button type="submit" disabled={page==='login'
+                        ? !email || !password
+                        : !name || !email || !password || !secret
+                        } className="btn btn-primary col-12">
                             {loading ? <SyncOutlined spin/>:"Submit"}
                         </button>
                         </div>
