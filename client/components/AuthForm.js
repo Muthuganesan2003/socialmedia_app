@@ -63,7 +63,6 @@ const AuthForm =({
                             </div>
                             
                         </div>}
-
                         </>
                         
                         <div className="py-1">
